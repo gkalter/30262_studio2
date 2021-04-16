@@ -54,13 +54,9 @@
             container: "mapId"
             });
 
-            var popup = new mapboxgl.Popup (
-              set.html("<b>The Presidio.</b><br /> Explore to find a drinking fountain!")
-            );
-
             var marker = new mapboxgl.Marker()
               .setLngLat([-122.4700, 37.8011])
-              .setPopup(popup)
+              .setPopup(new mapboxgl.Popup().setHTML("<b>The Presidio.</b><br /> Explore to find a drinking fountain!"))
               .addTo(map)
             ;
         </script>
