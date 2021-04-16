@@ -13,7 +13,7 @@
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
 
   <!-- Set the map's width: 800px and height: 600px in a `style` tag -->
-  <style type="text/css">
+  <style>
         #mapId {
       width: 800px;
       height: 600px;
@@ -43,15 +43,16 @@
 
   <script>
     // Set your Mapbox access token
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZ2thbHRlciIsImEiOiJja2xtcW0zZm0wYm40MndwNHN6YWxyamw2In0.Dccg4dRU1lILqq7qLqtSzg’;
+    mapboxgl.accessToken = "pk.eyJ1IjoiZ2thbHRlciIsImEiOiJja2xtcW0zZm0wYm40MndwNHN6YWxyamw2In0.Dccg4dRU1lILqq7qLqtSzg";
 
             // Initialize the map
-            var map = new mapboxgl.Map(
-                container: 'mapId', // container id
-                style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-                center: [-122.467, 37.798], // starting position [lng, lat]
-                zoom: 13 // starting zoom
-            );
+
+            var map = new mapboxgl.Map({
+            center: [-122.467, 37.798],
+            zoom: 13,
+            style: "mapbox://styles/mapbox/streets-v11",
+            container: "mapId"
+            });
 
             var popup = new mapboxgl.Popup (
               set.html("<b>The Presidio.</b><br /> Explore to find a drinking fountain!")
@@ -59,33 +60,11 @@
 
             var marker = new mapboxgl.marker (
               .setLngLat([-122.4700, 37.8011])
-              .setpopup(popup)
+              .setPopup(popup)
               .addTo(map)
             );
         </script>
-    /* Create a variable called "map" and use it to store a new mapbox gl map.
-    * Set your map's center to [-122.467, 37.798] and zoom to 13.
-    * Set the style URL to "mapbox://styles/mapbox/light-v10"
-    * See the Mapbox GL JS API reference for more info: https://docs.mapbox.com/mapbox-gl-js/api/
-    */
-
-
-
-    /* Create a variable called "popup" to store a new Popup instance (ref: https://docs.mapbox.com/mapbox-gl-js/api/#popup).
-     * and set its HTML content to:
-     * "<b>The Presidio.</b><br /> Explore to find a drinking fountain!"
-     */
-
-
-    /* Create a variable called "marker,"
-     * add to it a new Marker (ref: https://docs.mapbox.com/mapbox-gl-js/api/#marker),
-     * set its Lng, Lat to [-122.4700, 37.8011],
-     * set its popup to the popup variable you created earlier,
-     * and add it to the map.
-     */
-
-
-  </script>
+  
 </body>
 
 </html>
